@@ -45,10 +45,10 @@ function App() {
 		<div
 			className={`bg-avengerBG bg-no-repeat ${
 				theme === 'light' ? 'bg-neutral-300' : 'bg-neutral-800'
-			}  bg-blend-overlay bg-fixed bg-cover`}
+			}  bg-blend-overlay bg-fixed bg-cover px-5`}
 		>
 			<Headers theme={theme} handleThemeChange={handleThemeChange} />
-			<div className="flex flex-col lg:flex-row container gap-10">
+			<div className="flex flex-col-reverse lg:flex-row container gap-10">
 				<Actors
 					theme={theme}
 					actors={actors}
@@ -56,7 +56,13 @@ function App() {
 					handleAddActor={handleAddActor}
 					handleRemoveActor={handleRemoveActor}
 				/>
-				<ActorsCart cartActors={cartActors} remaining={remaining} cost={cost} />
+
+				<ActorsCart
+					cartActors={cartActors}
+					theme={theme}
+					remaining={remaining}
+					cost={cost}
+				/>
 			</div>
 		</div>
 	);

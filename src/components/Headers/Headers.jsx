@@ -1,10 +1,19 @@
 import PropTypes from 'prop-types';
-const Headers = ({ handleThemeChange }) => {
+const Headers = ({ handleThemeChange, theme }) => {
 	return (
 		<>
 			<div className="navbar container">
 				<div className="flex-1">
-					<a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+					<p className="normal-case text-2xl font-bold">
+						Actors
+						<span
+							className={`${
+								theme === 'dark' ? 'text-violet-500' : 'text-sky-400'
+							}`}
+						>
+							Hut
+						</span>
+					</p>
 				</div>
 				<div className="flex-none">
 					<label className="swap swap-rotate">
@@ -32,6 +41,7 @@ const Headers = ({ handleThemeChange }) => {
 
 Headers.propTypes = {
 	handleThemeChange: PropTypes.func.isRequired,
+	theme: PropTypes.string.isRequired,
 };
 
 export default Headers;

@@ -47,7 +47,7 @@ function App() {
 				theme === 'light' ? 'bg-neutral-300' : 'bg-neutral-800'
 			}  bg-blend-overlay bg-fixed bg-cover`}
 		>
-			<Headers handleThemeChange={handleThemeChange} />
+			<Headers theme={theme} handleThemeChange={handleThemeChange} />
 			<div className="flex flex-col lg:flex-row container gap-10">
 				<Actors
 					theme={theme}
